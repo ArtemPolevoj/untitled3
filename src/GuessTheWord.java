@@ -5,13 +5,13 @@ import java.util.Scanner;
 
 public class GuessTheWord {
     public static void main(String[] args) {
-        String [] masWords = {"автомобиль","машина","тир"};
-        ArrayList<String> words = new ArrayList<String>();
+        String [] words = FileHangling.fileReading();
 
 
-        String word = String.valueOf((int) (Math.random() * masWords.length));
-        System.out.println(words.size());
-        System.out.println(words);
+
+        String word = words[((int) (Math.random() * words.length))];
+       // System.out.println(words.size());
+      //  System.out.println(words);
         System.out.println(word);
         String maskWord = "-".repeat(word.length());
         Scanner input = new Scanner(System.in);
@@ -40,13 +40,8 @@ public class GuessTheWord {
             System.out.println("Слово - \"" + maskWord+"\".");
         }
         System.out.println("Поздравляем!!! Вы угадали слово.");
-        System.out.print("Введите слово для добавления в игру: ");
-        String inWord = input.nextLine().toLowerCase();
-        words.add(inWord);
-        words.add("дождь");
+        FileHangling.writingWordFiel(words);
 
-        System.out.println(words);
-        System.out.println(words.size());
     }
 }
 
