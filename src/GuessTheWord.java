@@ -7,11 +7,8 @@ public class GuessTheWord {
     public static void main(String[] args) {
         String [] words = FileHangling.fileReading();
 
-
-
         String word = words[((int) (Math.random() * words.length))];
-       // System.out.println(words.size());
-      //  System.out.println(words);
+
         System.out.println(word);
         String maskWord = "-".repeat(word.length());
         Scanner input = new Scanner(System.in);
